@@ -1,0 +1,52 @@
+.container{
+	max-width: 1200px;
+}
+
+
+.img__container{
+	width: 100px;
+	height: 100px;
+	display: flex;
+	
+}
+
+.img__image{
+	width: 100px;
+	height: 100px;
+}
+
+.hover{
+	display: none;
+}
+
+.image__form{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 150px;
+}
+
+.image__input{
+	max-width: 150px;
+	border: 3px solid blue;
+	border-radius: 15px;
+	padding: 5px 10px;
+}
+
+.image__button{
+	background: none;
+	border: 3px solid blue;
+	border-radius: 15px;
+	cursor: pointer;
+	margin-top: 10px;
+}
+
+.dark_button{
+	color: white;
+}
+
+.dark_input{
+	background-color: black;
+	color: white;
+}
