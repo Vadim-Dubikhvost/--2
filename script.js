@@ -3,6 +3,9 @@
 const button = document.getElementById("button")
 const intervalInput = document.getElementById("interval_input")
 const images = document.getElementsByClassName("img__image")
+const tableButton = document.getElementById("tableButton")
+const fromInput = document.getElementById("fromInput")
+const toInput = document.getElementById("toInput")
 
 const getInterval = () => {
 	return +intervalInput.value
@@ -44,3 +47,47 @@ button.addEventListener('click', (e) => {
 		alert("Input the number type of interval")
 	}
 })
+
+function createTable(){
+	let tableDiv = document.querySelector("#table")
+
+	let table = document.createElement("table")
+	table.border="3"
+
+
+	for (let i = 0; i < 10; i++) {
+		let tr = document.createElement('tr');
+		
+		for (let j = 0; j < 10; j++) {
+			let td = document.createElement('td');
+			td.innerText = getRandomIntInclusive(+fromInput.value, +toInput.value)
+			if(j%2 === 0 && i%2 === 0){
+				td.bgColor="black"
+				td.style = "color: white"
+			}
+			if(j%2 !== 0 && i%2 !== 0){
+				td.bgColor="black"
+				td.style = "color: white"
+			}
+			tr.appendChild(td);
+		}
+		
+		table.appendChild(tr);
+		
+	}
+
+	tableDiv.appendChild(table)
+}
+
+tableButton.addEventListener('click',(e)=>{
+	e.stopPropagation()
+	e.preventDefault()
+
+	createTable()
+})
+
+function getRandomIntInclusive(min, max) {
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min + 1) + min); 
+}
